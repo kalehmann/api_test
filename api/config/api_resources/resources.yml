@@ -1,0 +1,26 @@
+App\Entity\Greeting:
+    collectionOperations:
+        get:
+            method: 'GET'
+        post:
+            method: 'POST'
+            denormalization_context:
+                groups:
+                    - 'add'
+    attributes:
+        normalization_context:
+            groups:
+                - 'read'
+        denormalization_context:
+            groups:
+                - 'edit'
+    properties:
+        immutable:
+            attributes:
+                swagger_context:
+                    example: "immutable value"
+        editable:
+            attributes:
+                swagger_context:
+                    example: "editable value"
+        
